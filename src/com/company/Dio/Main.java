@@ -79,33 +79,37 @@ public class Main {
                     System.out.println(vetores);
                 }
             case 3:
-                Produto produto = new Produto();
-                Operacao operacao = null;
+              try {
+                  Produto produto = new Produto();
+                  Operacao operacao = null;
 
-                String descricao;
-                String oper ;
-                double valorReal;
-                double percentual;
-
-
-                System.out.println("Digite a descrição do produto");
-                descricao= lerStr.nextLine();
-                produto.setDescricao(descricao);
-                System.out.println("Digite o valor do produto");
-                valorReal = ler.nextDouble();
-                produto.setValorReal(valorReal);
-                System.out.println("Digite operacao");
-                oper = lerStr.nextLine();
+                  String descricao;
+                  String oper;
+                  double valorReal;
+                  double percentual;
 
 
-                System.out.println("Digite o percentual da operaçao");
-                percentual = ler.nextDouble();
-                produto.setPercentual(percentual);
+                  System.out.println("Digite a descrição do produto");
+                  descricao = lerStr.nextLine();
+                  produto.setDescricao(descricao);
+                  System.out.println("Digite o valor do produto");
+                  valorReal = ler.nextDouble();
+                  produto.setValorReal(valorReal);
+                  System.out.println("Digite operacao");
+                  oper = lerStr.nextLine();
 
 
-                 produto.operacaoMetodo(oper);
+                  System.out.println("Digite o percentual da operaçao");
+                  percentual = ler.nextDouble();
+                  produto.setPercentual(percentual);
 
-                break;
+
+                  produto.operacaoMetodo(oper);
+
+                  break;
+              }catch (NullPointerException e){
+                  System.out.println("Digite os dados corretos");
+              }
 
         }
     }
